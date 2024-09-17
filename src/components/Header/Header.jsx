@@ -13,10 +13,10 @@ function Header() {
         <Link to={"/"} className="header__button-home">
           <button> Home</button>
         </Link>
-        <Link to={"/professionals"} className="header__button-office">
+        <Link to={"/"} className="header__button-office">
           <button>Dental Office</button>
         </Link>
-        <Link to={"/offices"} className="header__button-professional">
+        <Link to={"/jobs"} className="header__button-professional">
           <button>Dental Professional</button>
         </Link>
       </div>

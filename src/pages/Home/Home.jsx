@@ -7,7 +7,7 @@ import SchedulingImage from "../../assets/images/scheduling-1.webp";
 import TrackingImage from "../../assets/images/time-tracking.webp";
 import DoctorsImage from "../../assets/images/healthcare-scheduling.svg";
 import FeaturesImage from "../../assets/images/Payroll-1.png";
-import CheckIcon from "../../assets/icon/check.svg";
+import BookingImage from "../../assets/images/healthcare-services.webp";
 
 function Home() {
   return (
@@ -150,7 +150,7 @@ function Home() {
       <div className="call-to-action">
         <img
           className="call-to-action__image"
-          src={CheckIcon}
+          src={BookingImage}
           alt="Check Icon"
         />
         <h2 className="call-to-action__title">

@@ -122,7 +122,7 @@
 }
 
 .call-to-action {
-  background-color: $primary-color-lilac;
+  background: linear-gradient(to top, rgba(200, 161, 224), white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,7 +130,7 @@
   padding: 32px;
 
   &__image {
-    width: 60px;
+    width: 200px;
     margin: 32px;
   }
 
@@ -145,6 +145,5 @@
   }
 
   //add gradient a bloque
-  //cambia el icono
   //potencialmente divide en componentes el home page
 }

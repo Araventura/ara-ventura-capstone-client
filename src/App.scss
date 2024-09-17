@@ -1,0 +1,8 @@
+@use "./styles/fonts" as *;
+@use "./styles/mixins" as *;
+@use "./styles/variables" as *;
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}

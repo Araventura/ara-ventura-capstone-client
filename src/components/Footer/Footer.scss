@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 36px;
+
+  &__subtitle {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__icon {
+    width: 30px;
+    margin: 16px;
+  }
+}

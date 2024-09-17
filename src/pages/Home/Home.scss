@@ -5,40 +5,6 @@
   background-color: white;
 }
 
-.hero {
-  display: flex;
-  margin: 32px;
-
-  &__left {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-
-  &__title {
-    font-size: 48px;
-  }
-  &__subtitle {
-    font-size: 18px;
-    font-style: italic;
-    margin-top: 32px;
-    margin-bottom: 32px;
-  }
-
-  &__right {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-img {
-      width: 500px;
-    }
-  }
-}
-
 .features {
   display: flex;
   justify-content: center;
@@ -92,34 +58,34 @@
   }
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  margin-top: 50px;
-}
+// .cards {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 50px;
+//   margin-top: 50px;
+// }
 
-.card__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  gap: 30px;
-  width: 290px;
-  height: 400px;
-  box-shadow: 0 3px 16px -3px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 0 10px;
+// .card__item {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   gap: 30px;
+//   width: 290px;
+//   height: 400px;
+//   box-shadow: 0 3px 16px -3px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+//   padding: 0 10px;
 
-  &-img {
-    width: 200px;
-  }
+//   &-img {
+//     width: 200px;
+//   }
 
-  &-subtitle {
-    color: black;
-  }
-}
+//   &-subtitle {
+//     color: black;
+//   }
+// }
 
 .call-to-action {
   background: linear-gradient(to top, rgba(200, 161, 224), white);
@@ -143,7 +109,4 @@
       background-color: white;
     }
   }
-
-  //add gradient a bloque
-  //potencialmente divide en componentes el home page
 }

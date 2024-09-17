@@ -115,4 +115,36 @@
   &-img {
     width: 200px;
   }
+
+  &-subtitle {
+    color: black;
+  }
+}
+
+.call-to-action {
+  background-color: $primary-color-lilac;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+
+  &__image {
+    width: 60px;
+    margin: 32px;
+  }
+
+  &__title {
+    color: white;
+  }
+
+  &__button {
+    & button {
+      background-color: white;
+    }
+  }
+
+  //add gradient a bloque
+  //cambia el icono
+  //potencialmente divide en componentes el home page
 }

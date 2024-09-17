@@ -7,6 +7,7 @@ import SchedulingImage from "../../assets/images/scheduling-1.webp";
 import TrackingImage from "../../assets/images/time-tracking.webp";
 import DoctorsImage from "../../assets/images/healthcare-scheduling.svg";
 import FeaturesImage from "../../assets/images/Payroll-1.png";
+import CheckIcon from "../../assets/icon/check.svg";
 
 function Home() {
   return (
@@ -108,7 +109,7 @@ function Home() {
               src={TrackingImage}
               alt="Animated human looking at a phone"
             />
-            <div>
+            <div className="card__item-wrapper">
               <h2 className="card__item-title">On-Demand Shifts</h2>
               <p className="card__item-subtitle">
                 Single tool for planning and get notified when there's an
@@ -122,7 +123,7 @@ function Home() {
               src={DoctorsImage}
               alt="Two animated doctors planning a schedule"
             />
-            <div>
+            <div className="card__item-wrapper">
               <h2 className="card__item-title">Booking Shifts but Smoother</h2>
               <p className="card__item-subtitle">
                 Multiple confirmation options, select shifts depending on your
@@ -136,7 +137,7 @@ function Home() {
               src={FeaturesImage}
               alt="Animated app features"
             />
-            <div>
+            <div className="card__item-wrapper">
               <h2 className="card__item-title">Scheduling and communication</h2>
               <p className="card__item-subtitle">
                 Efficiently plan and manage your schedule
@@ -144,6 +145,20 @@ function Home() {
             </div>
           </li>
         </ul>
+      </div>
+      {/* Call to action */}
+      <div className="call-to-action">
+        <img
+          className="call-to-action__image"
+          src={CheckIcon}
+          alt="Check Icon"
+        />
+        <h2 className="call-to-action__title">
+          Get Started with DentaShift today!
+        </h2>
+        <Link to={"/"} className="hero__button call-to-action__button">
+          <button>Sing up for free</button>
+        </Link>
       </div>
     </div>
   );

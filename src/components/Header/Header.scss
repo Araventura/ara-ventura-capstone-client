@@ -2,11 +2,13 @@
 @use "../../styles/mixins" as *;
 
 .header {
-  margin: 0 32px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
+  box-shadow: 0 3px 16px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 
   &__logo-wrapper {
     & img {

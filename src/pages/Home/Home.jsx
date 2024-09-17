@@ -39,7 +39,10 @@ function Home() {
           />
         </div>
         <div className="features__right">
-          <h2>Easily Publish Job Offers</h2>
+          <h2 className="features__right-title">Easily Publish Job Offers</h2>
+          <h4 className="features__right-subtitle">
+            Know who's available to work by publishing a shift opening
+          </h4>
           <ul className="features__right-list">
             <li className="features__right-item">
               ✨ Instantly broadcast shifts to potential staff

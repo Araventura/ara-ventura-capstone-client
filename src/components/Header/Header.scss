@@ -1,0 +1,9 @@
+.header {
+  margin: 0 32px;
+  &__logo-wrapper {
+    & img {
+      height: 130px;
+      width: auto;
+    }
+  }
+}

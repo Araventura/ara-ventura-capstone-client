@@ -10,7 +10,7 @@ function Header() {
         <img src={Logo} alt="DentaShift Logo" />
       </div>
       <div className="header__buttons">
-        <Link className="header__button-office btn btn-outline-primary">
+        <Link className="header__button-office">
           <button>Dental Office</button>
         </Link>
         <Link className="header__button-professional">

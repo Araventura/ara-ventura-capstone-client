@@ -1,9 +1,34 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 .header {
   margin: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+
   &__logo-wrapper {
     & img {
       height: 130px;
       width: auto;
+    }
+  }
+
+  &__button {
+    &-home {
+      font-weight: bold;
+
+      & button {
+        color: white;
+        background-color: $primary-color-lilac;
+      }
+    }
+
+    &-professional {
+      & button {
+        margin-left: 0;
+      }
     }
   }
 }

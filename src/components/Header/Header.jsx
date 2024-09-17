@@ -10,6 +10,9 @@ function Header() {
         <img src={Logo} alt="DentaShift Logo" />
       </div>
       <div className="header__buttons">
+        <Link to={"/"} className="header__button-home">
+          <button> Home</button>
+        </Link>
         <Link className="header__button-office">
           <button>Dental Office</button>
         </Link>

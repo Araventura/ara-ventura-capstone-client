@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.home {
+  background-color: white;
+}
+
+.hero {
+  display: flex;
+  margin: 32px;
+
+  &__left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  &__title {
+    font-size: 48px;
+  }
+  &__subtitle {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+      width: 500px;
+    }
+  }
+}

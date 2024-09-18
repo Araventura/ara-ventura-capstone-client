@@ -9,6 +9,7 @@ function JobsList() {
     <div className="jobs">
       <div className="jobs__left">
         <ul className="jobs__list">
+          <h2>Jobs near you</h2>
           <li className="jobs__list-item">
             <div className="jobs__top-wrapper">
               <div className="jobs__list-profile">

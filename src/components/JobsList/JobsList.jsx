@@ -1,6 +1,8 @@
 import React from "react";
 import "./JobsList.scss";
 import GoogleMaps from "../../assets/images/google-maps.png";
+import DoctorImage from "../../assets/images/doctor-1.jpg";
+import OfficeImage from "../../assets/images/office-1.jpg";
 
 function JobsList() {
   return (
@@ -11,7 +13,7 @@ function JobsList() {
             <div className="jobs__top-wrapper">
               <div className="jobs__list-profile">
                 <div className="jobs__list-image">
-                  <img src="" alt="" />
+                  <img src={DoctorImage} alt="Photo of a dental office" />
                 </div>
                 <div className="jobs__list-details">
                   <h4 className="jobs__list-name">Oficces Name</h4>
@@ -33,14 +35,14 @@ function JobsList() {
                 </p>
               </div>
               <div className="jobs__details-right">
-                <img src="" alt="" />
+                <img src={OfficeImage} alt="Dental Office photo" />
               </div>
             </div>
           </li>
         </ul>
       </div>
       <div className="jobs__right">
-        <img className="jobs__right-image" src={GoogleMaps} alt="" />
+        <img className="jobs__right-image" src={GoogleMaps} alt="Google Maps" />
       </div>
     </div>
   );

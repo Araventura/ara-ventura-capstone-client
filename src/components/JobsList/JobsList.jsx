@@ -14,8 +14,8 @@ function JobsList() {
                   <img src="" alt="" />
                 </div>
                 <div className="jobs__list-details">
-                  <h4>Oficces Name</h4>
-                  <h5>Location</h5>
+                  <h4 className="jobs__list-name">Oficces Name</h4>
+                  <h5 className="jobs__list-location">Location</h5>
                 </div>
               </div>
               <div className="jobs__list-rate">

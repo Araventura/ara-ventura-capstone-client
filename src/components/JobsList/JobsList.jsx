@@ -9,6 +9,7 @@ import OfficeImage from "../../assets/images/office-1.jpg";
 
 function JobsList() {
   const [officesJobsList, setOfficesJobsList] = useState([]);
+  const [officesList, setOfficesList] = useState([]);
   const params = useParams();
 
   useEffect(() => {
@@ -24,14 +25,23 @@ function JobsList() {
     getOfficesJobsList();
   }, []);
 
+  useEffect(() => {
+    const getOfficesList = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/offices");
+        setOfficesList(response.data);
+      } catch (e) {
+        console.log("Error getting offices list:", e);
+      }
+    };
+
+    getOfficesList();
+  }, []);
+
   return (
     <div className="jobs">
       <div className="jobs__left">
-        <ul
-          className="jobs__list"
-          officesJobsList={officesJobsList}
-          officesLists={officesList}
-        >
+        <ul className="jobs__list">
           <h2>Jobs near you</h2>
           {officesJobsList.map((job) => (
             <li key={job.id} className="jobs__list-item">

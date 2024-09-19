@@ -1,0 +1,63 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.details {
+  display: flex;
+  margin: 32px;
+
+  &__left {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+
+    &-wrapper {
+      margin: 32px;
+      display: flex;
+    }
+
+    &-img {
+      & img {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__doctor {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    &-name {
+      font-weight: 500;
+      color: black;
+    }
+
+    &-address {
+      font-weight: 300;
+    }
+  }
+
+  &__right {
+    width: 600px;
+
+    &-image {
+      width: inherit;
+    }
+  }
+
+  &__info {
+    margin-left: 32px;
+  }
+
+  &__button {
+    &-email {
+      width: 90%;
+      background-color: $primary-color-lilac;
+      color: white;
+    }
+  }
+}

@@ -2,20 +2,22 @@ import { useEffect, useState } from "react";
 import "./JobDetails.scss";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import dateFormat from "dateformat";
 import GoogleMaps from "../../assets/images/google-maps.png";
 
 function JobDetails() {
+  const params = useParams();
   const [officesJobsList, setOfficesJobsList] = useState([]);
-  const [officesList, setOfficesList] = useState([]);
+  const [officesList, setOfficesList] = useState({});
 
   useEffect(() => {
     const getOfficesJobsList = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/jobs");
+        const response = await axios.get(
+          `http://localhost:8080/jobs/${params}`
+        );
         setOfficesJobsList(response.data);
       } catch (e) {
-        console.log("Error getting offices jobs list:", e);
+        console.log("Error getting jobs details:", e);
       }
     };
 
@@ -50,33 +52,37 @@ function JobDetails() {
 
   return (
     <div className="details">
-      <Link>
-        <button>Back</button>
-      </Link>
       <div className="details__left">
-        <div>
-          <div>
-            <img src="" alt="" />
+        <Link to="/jobs" className="details__link">
+          <button className="details__button-back">Back</button>
+        </Link>
+        <div className="details__left-wrapper">
+          <div className="details__left-img">
+            <img src="../src/assets/images/doctor-1.jpg" alt="Doctors photo" />
           </div>
-          <div>
-            <h4>doctor name</h4>
-            <h5>address</h5>
+          <div className="details__doctor">
+            <h4 className="details__doctor-name">name of doctor</h4>
+            <h5 className="details__doctor-address">address</h5>
           </div>
         </div>
-        <div>
-          <p>Reviews</p>
-          <p>office:</p>
-          <p>looking for</p>
-          <p>date</p>
-          <p>contact</p>
-          <p>Job details</p>
+        <div className="details__info">
+          <p className="details__info-reviews">Reviews</p>
+          <p className="details__info-office">office:</p>
+          <p className="details__info-job">looking for</p>
+          <p className="details__info-details">Job details</p>
+          <p className="details__info-date">date</p>
+          <p className="details__info-contact">contact - contact position</p>
         </div>
-        <Link mailto="">
-          <button>Get in touch</button>
+        <Link className="details__link-email" mailto="officeemail@test.com">
+          <button className="details__button-email">Get in touch</button>
         </Link>
       </div>
       <div className="details__right">
-        <img className="details__right-image" src={GoogleMaps} alt="" />
+        <img
+          className="details__right-image"
+          src={GoogleMaps}
+          alt="Google Map"
+        />
       </div>
     </div>
   );

@@ -39,6 +39,11 @@
     &-address {
       font-weight: 300;
     }
+
+    &-rate {
+      color: green;
+      font-weight: 600;
+    }
   }
 
   &__right {
@@ -51,6 +56,10 @@
 
   &__info {
     margin-left: 32px;
+
+    & p {
+      color: black;
+    }
   }
 
   &__button {

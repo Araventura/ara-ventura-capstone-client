@@ -2,53 +2,44 @@ import { useEffect, useState } from "react";
 import "./JobDetails.scss";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import dateFormat from "dateformat";
 import GoogleMaps from "../../assets/images/google-maps.png";
 
 function JobDetails() {
   const params = useParams();
-  const [officesJobsList, setOfficesJobsList] = useState([]);
-  const [officesList, setOfficesList] = useState({});
+  const [jobDetails, setJobDetails] = useState([]);
+  const [officeDetails, setOfficeDetails] = useState({});
 
   useEffect(() => {
     const getOfficesJobsList = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/jobs/${params}`
+          `http://localhost:8080/jobs/${params.id}`
         );
-        setOfficesJobsList(response.data);
+        setJobDetails(response.data);
       } catch (e) {
         console.log("Error getting jobs details:", e);
       }
     };
-
     getOfficesJobsList();
   }, []);
 
   useEffect(() => {
     const getOfficesList = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/offices");
-        setOfficesList(response.data);
+        const response = await axios.get(
+          `http://localhost:8080/offices/${jobDetails.officeId}`
+        );
+        setOfficeDetails(response.data);
       } catch (e) {
         console.log("Error getting offices list:", e);
       }
     };
 
-    getOfficesList();
-  }, []);
-
-  const jobsWithOffices = officesJobsList.map((job) => {
-    const office = officesList.find((office) => office.id === job.officeId);
-    return {
-      ...job,
-      officeName: office?.name || "Office not found",
-      officeAddress: office?.address || "N/A",
-      officeDoctor: office?.practicingDoctor || "N/A",
-      officeContact: office?.contactName || "N/A",
-      officeContactPosition: office?.contactPosition || "N/A",
-      officePhone: office?.phone || "N/A",
-    };
-  });
+    if (jobDetails.officeId != undefined) {
+      getOfficesList();
+    }
+  }, [jobDetails]);
 
   return (
     <div className="details">
@@ -61,17 +52,35 @@ function JobDetails() {
             <img src="../src/assets/images/doctor-1.jpg" alt="Doctors photo" />
           </div>
           <div className="details__doctor">
-            <h4 className="details__doctor-name">name of doctor</h4>
-            <h5 className="details__doctor-address">address</h5>
+            <h4 className="details__doctor-name">
+              {officeDetails.practicingDoctor}
+            </h4>
+            <h5 className="details__doctor-address">{officeDetails.address}</h5>
+            <h5 className="details__doctor-rate">
+              ${jobDetails.payMin}-{jobDetails.payMax} hourly
+            </h5>
           </div>
         </div>
         <div className="details__info">
-          <p className="details__info-reviews">Reviews</p>
-          <p className="details__info-office">office:</p>
-          <p className="details__info-job">looking for</p>
-          <p className="details__info-details">Job details</p>
-          <p className="details__info-date">date</p>
-          <p className="details__info-contact">contact - contact position</p>
+          <p className="details__info-reviews">⭐️ 5.0 Reviews</p>
+          <p className="details__info-office">
+            Name of Office: <b>{officeDetails.name}</b>
+          </p>
+          <p className="details__info-job">
+            Available Shift: {jobDetails.jobTitle}
+          </p>
+          <p className="details__info-details">
+            Description: {jobDetails.description}
+          </p>
+          <p className="details__info-date">
+            {" "}
+            Date: {dateFormat(jobDetails.dateStart, "mmm d")} -
+            {dateFormat(jobDetails.dateEnd, "mmm d")}
+          </p>
+          <p className="details__info-contact">
+            Contact: {officeDetails.contactName} -{" "}
+            {officeDetails.contactPosition}
+          </p>
         </div>
         <Link className="details__link-email" mailto="officeemail@test.com">
           <button className="details__button-email">Get in touch</button>

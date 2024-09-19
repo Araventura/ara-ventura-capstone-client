@@ -1,15 +1,37 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./JobsList.scss";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import GoogleMaps from "../../assets/images/google-maps.png";
 import DoctorImage from "../../assets/images/doctor-1.jpg";
 import OfficeImage from "../../assets/images/office-1.jpg";
 
 function JobsList() {
+  const [officesJobsList, setOfficesJobsList] = useState([]);
+  const params = useParams();
+
+  useEffect(() => {
+    const getOfficesJobsList = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/jobs");
+        setOfficesJobsList(response.data);
+        console.log(response.data);
+      } catch (e) {
+        console.log("Error getting offices jobs list:", e);
+      }
+    };
+
+    getOfficesJobsList();
+  }, []);
+
   return (
     <div className="jobs">
       <div className="jobs__left">
-        <ul className="jobs__list">
+        <ul className="jobs__list" officesJobsList={officesJobsList}>
           <h2>Jobs near you</h2>
+          {/* {officesJobsList.map((job) => 
+          
+          )} */}
           <li className="jobs__list-item">
             <div className="jobs__top-wrapper">
               <div className="jobs__list-profile">

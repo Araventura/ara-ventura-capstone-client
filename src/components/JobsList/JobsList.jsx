@@ -3,6 +3,8 @@ import "./JobsList.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
+
 import GoogleMaps from "../../assets/images/google-maps.png";
 import DoctorImage from "../../assets/images/doctor-1.jpg";
 import OfficeImage from "../../assets/images/office-1.jpg";
@@ -38,27 +40,47 @@ function JobsList() {
     getOfficesList();
   }, []);
 
+  const jobsWithOffices = officesJobsList.map((job) => {
+    const office = officesList.find((office) => office.id === job.officeId);
+    return {
+      ...job,
+      officeName: office?.name || "Office not found",
+      officeAddress: office?.address || "N/A",
+      officeDoctor: office?.practicingDoctor || "N/A",
+      officeContact: office?.contactName || "N/A",
+      officeContactPosition: office?.contactPosition || "N/A",
+      officePhone: office?.phone || "N/A",
+    };
+  });
+
   return (
     <div className="jobs">
       <div className="jobs__left">
         <ul className="jobs__list">
           <h2>Jobs near you</h2>
-          {officesJobsList.map((job) => (
+          {jobsWithOffices.map((job) => (
             <li key={job.id} className="jobs__list-item">
               <Link to={`/jobs/${job.id}`}>
                 <div className="jobs__top-wrapper">
                   <div className="jobs__list-profile">
                     <div className="jobs__list-image">
-                      <img src={DoctorImage} alt="Photo of a dental office" />
+                      <img
+                        src={`../src/assets/images/doctor-${job.officeId}.jpg`}
+                        alt="Photo of a dental office"
+                      />
                     </div>
                     <div className="jobs__list-details">
-                      <h4 className="jobs__list-name">Oficces Name</h4>
-                      <h5 className="jobs__list-location">Location</h5>
+                      <h4 className="jobs__list-name">
+                        {job.id}. {job.officeDoctor}
+                      </h4>
+                      <h5 className="jobs__list-location">
+                        {job.officeAddress}
+                      </h5>
                     </div>
                   </div>
                   <div className="jobs__list-rate">
                     <h4 className="jobs__list-hourly">
-                      ${job.payMin}-{job.payMax} hourly
+                      ${job.payMin}-{job.payMax}
                     </h4>
                   </div>
                 </div>
@@ -66,18 +88,24 @@ function JobsList() {
                   <div className="jobs__details-left">
                     <p className="jobs__details-rating"> ⭐️ 5.0 Reviews</p>
                     <p className="jobs__details-office">
-                      Office: Dental Office
+                      Office: {job.officeName}
                     </p>
                     <p className="jobs__details-job">
-                      Looking for: {job.jobTitle}
+                      Looking for: <b>{job.jobTitle}</b>
                     </p>
-                    <p className="jobs__details-date">Date: July 22 - Sep 4</p>
+                    <p className="jobs__details-date">
+                      Date: {dateFormat(job.dateStart, "mmm d")} -{" "}
+                      {dateFormat(job.dateEnd, "mmm d")}
+                    </p>
                     <p className="jobs__details-contact">
-                      Contact: Manager Name - Manager Positon
+                      Contact: {job.officeContact} - {job.officeContactPosition}
                     </p>
                   </div>
                   <div className="jobs__details-right">
-                    <img src={OfficeImage} alt="Dental Office photo" />
+                    <img
+                      src={`../src/assets/images/office-${job.officeId}.jpg`}
+                      alt="Dental Office photo"
+                    />
                   </div>
                 </div>
               </Link>

@@ -49,7 +49,10 @@ function JobDetails() {
         </Link>
         <div className="details__left-wrapper">
           <div className="details__left-img">
-            <img src="../src/assets/images/doctor-1.jpg" alt="Doctors photo" />
+            <img
+              src={`../src/assets/images/doctor-${jobDetails.officeId}.jpg`}
+              alt="Doctors photo"
+            />
           </div>
           <div className="details__doctor">
             <h4 className="details__doctor-name">
@@ -67,7 +70,7 @@ function JobDetails() {
             Name of Office: <b>{officeDetails.name}</b>
           </p>
           <p className="details__info-job">
-            Available Shift: {jobDetails.jobTitle}
+            Available Shift: <b>{jobDetails.jobTitle}</b>
           </p>
           <p className="details__info-details">
             Description: {jobDetails.description}
@@ -82,7 +85,12 @@ function JobDetails() {
             {officeDetails.contactPosition}
           </p>
         </div>
-        <Link className="details__link-email" mailto="officeemail@test.com">
+        <Link
+          className="details__link-email"
+          onClick={() => {
+            window.location = `mailto:${officeDetails.email}`;
+          }}
+        >
           <button className="details__button-email">Get in touch</button>
         </Link>
       </div>

@@ -79,7 +79,9 @@
   }
 
   &__right {
-    width: 600px;
+    width: 550px;
+    display: flex;
+    align-items: center;
 
     &-image {
       width: inherit;

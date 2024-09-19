@@ -27,7 +27,7 @@ function Home() {
           Get Started with DentaShift today!
         </h2>
         <Link to={"/"} className="hero__button call-to-action__button">
-          <button>Sing up for free</button>
+          <button>Sign up for free</button>
         </Link>
       </div>
     </div>

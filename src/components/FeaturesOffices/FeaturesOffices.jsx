@@ -30,7 +30,7 @@ function FeaturesOffices() {
           </li>
         </ul>
         <Link to={"/"} className="hero__button">
-          <button>Sing up for free</button>
+          <button>Sign up for free</button>
         </Link>
       </div>
     </div>

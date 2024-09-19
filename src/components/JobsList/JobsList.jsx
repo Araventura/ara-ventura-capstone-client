@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import "./JobsList.scss";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
-
 import GoogleMaps from "../../assets/images/google-maps.png";
-import DoctorImage from "../../assets/images/doctor-1.jpg";
-import OfficeImage from "../../assets/images/office-1.jpg";
 
 function JobsList() {
   const [officesJobsList, setOfficesJobsList] = useState([]);
   const [officesList, setOfficesList] = useState([]);
-  const params = useParams();
 
   useEffect(() => {
     const getOfficesJobsList = async () => {

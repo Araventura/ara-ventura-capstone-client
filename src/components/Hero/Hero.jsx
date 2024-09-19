@@ -16,7 +16,7 @@ function Hero() {
           clinics and dental professionals.
         </h4>
         <Link to={"/"} className="hero__button">
-          <button>Sing up for free</button>
+          <button>Sign up for free</button>
         </Link>
       </div>
       <div className="hero__right">

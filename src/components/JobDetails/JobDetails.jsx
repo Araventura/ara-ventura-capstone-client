@@ -56,7 +56,7 @@ function JobDetails() {
           </div>
           <div className="details__doctor">
             <h4 className="details__doctor-name">
-              {officeDetails.practicingDoctor}
+              {jobDetails.id}. {officeDetails.practicingDoctor}
             </h4>
             <h5 className="details__doctor-address">{officeDetails.address}</h5>
             <h5 className="details__doctor-rate">

@@ -65,34 +65,37 @@ function JobsList() {
                       />
                     </div>
                     <div className="jobs__list-details">
-                      <h4 className="jobs__list-name">
+                      <h4 className="doctor-name jobs__list-name">
                         {job.id}. {job.officeDoctor}
                       </h4>
-                      <h5 className="jobs__list-location">
+                      <h5 className="office-address jobs__list-location">
                         {job.officeAddress}
                       </h5>
                     </div>
                   </div>
                   <div className="jobs__list-rate">
-                    <h4 className="jobs__list-hourly">
+                    <h4 className="job-rate">
                       ${job.payMin}-{job.payMax}
                     </h4>
                   </div>
                 </div>
                 <div className="jobs__bottom-wrapper">
                   <div className="jobs__details-left">
-                    <p className="jobs__details-rating"> ⭐️ 5.0 Reviews</p>
-                    <p className="jobs__details-office">
+                    <p className="list-details jobs__details-rating">
+                      {" "}
+                      ⭐️ 5.0 Reviews
+                    </p>
+                    <p className="list-details jobs__details-office">
                       Office: {job.officeName}
                     </p>
-                    <p className="jobs__details-job">
+                    <p className="list-details jobs__details-job">
                       Looking for: <b>{job.jobTitle}</b>
                     </p>
-                    <p className="jobs__details-date">
+                    <p className="list-details jobs__details-date">
                       Date: {dateFormat(job.dateStart, "mmm d")} -{" "}
                       {dateFormat(job.dateEnd, "mmm d")}
                     </p>
-                    <p className="jobs__details-contact">
+                    <p className="list-details jobs__details-contact">
                       Contact: {job.officeContact} - {job.officeContactPosition}
                     </p>
                   </div>

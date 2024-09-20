@@ -55,11 +55,11 @@ function JobDetails() {
             />
           </div>
           <div className="details__doctor">
-            <h4 className="details__doctor-name">
+            <h4 className="doctor-name">
               {jobDetails.id}. {officeDetails.practicingDoctor}
             </h4>
-            <h5 className="details__doctor-address">{officeDetails.address}</h5>
-            <h5 className="details__doctor-rate">
+            <h5 className="office-address">{officeDetails.address}</h5>
+            <h5 className="job-rate">
               ${jobDetails.payMin}-{jobDetails.payMax} hourly
             </h5>
           </div>

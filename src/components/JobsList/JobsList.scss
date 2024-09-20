@@ -47,28 +47,10 @@
       justify-content: center;
     }
 
-    &-name {
-      font-weight: 500;
-      margin-bottom: 0;
-      font-size: 20px;
-      color: black;
-    }
-
-    &-location {
-      font-weight: 300;
-      font-size: 14px;
-    }
-
     &-rate {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    &-hourly {
-      color: green;
-      font-weight: 500;
-      font-size: 20px;
     }
   }
 

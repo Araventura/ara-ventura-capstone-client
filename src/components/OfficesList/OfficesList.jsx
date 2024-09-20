@@ -34,23 +34,23 @@ function OfficesList() {
                     alt="doctor's image"
                   />
                   <div className="office__top-details">
-                    <h4 className="office__top-name">dr dame</h4>
-                    <h5 className="office__top-address">address</h5>
+                    <h4 className="doctor-name">1. dr dame</h4>
+                    <h5 className="office-address ">address</h5>
                   </div>
                 </div>
                 <div className="office__top-right">
                   <img src="" alt="Delete Icon" />
-                  <h4>$30-38 hourly</h4>
+                  <h4 className="job-rate">$30-38 hourly</h4>
                 </div>
               </div>
               <div className="office__jobs-bottom">
                 <div className="office__bottom-left">
-                  <p className="office__bottom-details">⭐️ 5.0 Reviews</p>
-                  <p className="office__bottom-details">Office: Office name</p>
-                  <p className="office__bottom-details">Available shift</p>
-                  <p className="office__bottom-details">Job details</p>
-                  <p className="office__bottom-details">Date: </p>
-                  <p className="office__bottom-details">
+                  <p className="list-details">⭐️ 5.0 Reviews</p>
+                  <p className="list-details">Office: Office name</p>
+                  <p className="list-details">Available shift</p>
+                  <p className="list-details">Job details</p>
+                  <p className="list-details">Date: </p>
+                  <p className="list-details">
                     Contact: Name of contact - contact position
                   </p>
                 </div>

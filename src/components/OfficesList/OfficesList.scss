@@ -28,15 +28,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
-      margin-top: 8px;
     }
 
     &-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-left: 80px;
+      margin-left: 49px;
       margin-bottom: 8px;
     }
   }
@@ -53,8 +51,8 @@
     }
 
     &-img {
-      width: 65px;
-      height: auto;
+      width: auto;
+      height: 50px;
       border-radius: 50%;
     }
 
@@ -76,10 +74,14 @@
     height: auto;
   }
 
+  &__bottom-left {
+    width: 70%;
+    letter-spacing: 1px;
+  }
+
   &__icon {
     width: 25px;
     height: auto;
-    margin-left: 20px;
-    margin-bottom: 16px;
+    margin: 10px 10px 0;
   }
 }

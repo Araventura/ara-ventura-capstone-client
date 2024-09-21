@@ -74,7 +74,7 @@ function OfficesList() {
                       <h4 className="doctor-name">
                         {job.id}. {office.practicingDoctor}
                       </h4>
-                      <h5 className="office-address">{office.address}</h5>
+                      <h4 className="office-address">{office.address}</h4>
                     </div>
                   </div>
                   <div className="office__top-right">

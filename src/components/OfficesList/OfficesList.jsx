@@ -42,6 +42,16 @@ function OfficesList() {
     getOffice();
   }, []);
 
+  const handleDeleteJob = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:8080/jobs/${id}`);
+      const nextJobList = officeJobsList.filter((job) => job.id != id);
+      setOfficeJobsList(nextJobList);
+    } catch (e) {
+      console.log(`Error deleting job:`, id);
+    }
+  };
+
   return (
     <div className="office">
       <div className="office__details">
@@ -84,13 +94,12 @@ function OfficesList() {
                         src={EditIcon}
                         alt="Edit Icon"
                       />
-                      <Link>
-                        <img
-                          className="office__icon"
-                          src={DeleteIcon}
-                          alt="Delete Icon"
-                        />
-                      </Link>
+                      <img
+                        onClick={() => handleDeleteJob(job.id)}
+                        className="office__icon"
+                        src={DeleteIcon}
+                        alt="Delete Icon"
+                      />
                     </div>
                     <h4 className="job-rate">
                       ${job.payMin}-{job.payMax} hourly

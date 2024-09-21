@@ -13,7 +13,7 @@ function Header() {
         <Link to={"/"} className="header__button-home">
           <button> Home</button>
         </Link>
-        <Link to={"/offices"} className="header__button-office">
+        <Link to={"/offices/4"} className="header__button-office">
           <button>Dental Office</button>
         </Link>
         <Link to={"/jobs"} className="header__button-professional">

@@ -2,32 +2,84 @@
 @use "../../styles/mixins" as *;
 
 .office {
-  &__title {
-    margin: 32px 32px 0;
+  margin: 0 32px;
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__jobs {
     margin: 0 32px;
 
+    &-title {
+      font-weight: 500;
+      color: black;
+      margin: 16px 0;
+    }
+
     &-item {
-      border-bottom: 1px solid rgb(192, 192, 192);
-      margin-left: 16px;
+      border-top: 1px solid rgb(192, 192, 192);
+      margin: 0 32px;
     }
 
     &-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 80px;
+      margin-bottom: 8px;
     }
   }
 
   &__top {
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
     &-left {
       display: flex;
+    }
+
+    &-img {
+      width: 65px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-evenly;
+      margin-left: 16px;
     }
   }
 
   &__buttons {
     margin-left: 16px;
+  }
+
+  &__bottom-img {
+    width: 180px;
+    height: auto;
+  }
+
+  &__icon {
+    width: 25px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 16px;
   }
 }

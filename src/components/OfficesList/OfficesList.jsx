@@ -2,20 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./OfficesList.scss";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import dateFormat from "dateformat";
 import EditIcon from "../../assets/icon/edit.png";
 import DeleteIcon from "../../assets/icon/delete.png";
 
 function OfficesList() {
   const params = useParams();
 
-  const [officeJobsList, setOfficesJobsList] = useState([]);
+  const [officeJobsList, setOfficeJobsList] = useState([]);
   const [office, setOffice] = useState([]);
 
   useEffect(() => {
     const getOfficesJobsList = async () => {
       try {
         const response = await axios.get("http://localhost:8080/jobs");
-        setOfficesJobsList(response.data);
+        const officeJobs = response.data.filter(
+          (job) => job.officeId == params.id
+        );
+        setOfficeJobsList(officeJobs);
       } catch (e) {
         console.log("Error getting offices jobs list:", e);
       }
@@ -38,24 +42,10 @@ function OfficesList() {
     getOffice();
   }, []);
 
-  // const jobsInOffice = officeJobsList.map((job) => {
-  //   const office = officesList.find((office) => office.id === job.officeId);
-
-  //   return {
-  //     ...job,
-  //     officeName: office?.name || "Office not found",
-  //     officeAddress: office?.address || "N/A",
-  //     officeDoctor: office?.practicingDoctor || "N/A",
-  //     officeContact: office?.contactName || "N/A",
-  //     officeContactPosition: office?.contactPosition || "N/A",
-  //     officePhone: office?.phone || "N/A",
-  //   };
-  // });
-
   return (
     <div className="office">
       <div className="office__details">
-        <h2 className="office__title">Welcome back name of manager!</h2>
+        <h2 className="office__title">Welcome back {office.contactName}!</h2>
         <div className="office__buttons">
           <Link className="office__link">
             <button className="office__buton">Post a job</button>
@@ -70,21 +60,21 @@ function OfficesList() {
       <div className="office__jobs">
         <h4 className="office__jobs-title">Active job listings:</h4>
         <ul className="office__jobs-list">
-          {office.map((job) => (
-            <Link key={job.id} className="office__jobs-link">
+          {officeJobsList.map((job) => (
+            <div key={job.id} className="office__jobs-link">
               <li className="office__jobs-item">
                 <div className="office__jobs-top">
                   <div className="office__top-left">
                     <img
                       className="office__top-img"
-                      src="../src/assets/images/doctor-1.jpg"
+                      src={`../src/assets/images/doctor-${office.id}.jpg`}
                       alt="doctor's image"
                     />
                     <div className="office__top-details">
                       <h4 className="doctor-name">
-                        {job.id}. {job.officeDoctor}
+                        {job.id}. {office.practicingDoctor}
                       </h4>
-                      <h5 className="office-address ">address</h5>
+                      <h5 className="office-address">{office.address}</h5>
                     </div>
                   </div>
                   <div className="office__top-right">
@@ -102,30 +92,39 @@ function OfficesList() {
                         />
                       </Link>
                     </div>
-                    <h4 className="job-rate">$30-38 hourly</h4>
+                    <h4 className="job-rate">
+                      ${job.payMin}-{job.payMax} hourly
+                    </h4>
                   </div>
                 </div>
                 <div className="office__jobs-bottom">
                   <div className="office__bottom-left">
                     <p className="list-details">⭐️ 5.0 Reviews</p>
-                    <p className="list-details">Office: Office name</p>
-                    <p className="list-details">Available shift</p>
-                    <p className="list-details">Job details</p>
-                    <p className="list-details">Date: </p>
+                    <p className="list-details">Office: {office.name}</p>
                     <p className="list-details">
-                      Contact: Name of contact - contact position
+                      Available shift: {job.jobTitle}
+                    </p>
+                    <p className="list-details">
+                      Job details: {job.description}
+                    </p>
+                    <p className="list-details">
+                      Date: {dateFormat(job.dateStart, "mmmm d, yyyy")} -{" "}
+                      {dateFormat(job.dateEnd, "mmmm d, yyyy")}
+                    </p>
+                    <p className="list-details">
+                      Contact: {office.contactName} - {office.contactPosition}
                     </p>
                   </div>
                   <div className="office__bottom-right">
                     <img
                       className="office__bottom-img"
-                      src="../src/assets/images/office-1.jpg"
+                      src={`../src/assets/images/office-${office.id}.jpg`}
                       alt="Image of dental office"
                     />
                   </div>
                 </div>
               </li>
-            </Link>
+            </div>
           ))}
         </ul>
       </div>

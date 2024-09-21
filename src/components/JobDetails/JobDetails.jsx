@@ -77,7 +77,7 @@ function JobDetails() {
           </p>
           <p className="details__info-date">
             {" "}
-            Date: {dateFormat(jobDetails.dateStart, "mmm d")} -
+            Date: {dateFormat(jobDetails.dateStart, "mmm d")} -{" "}
             {dateFormat(jobDetails.dateEnd, "mmm d")}
           </p>
           <p className="details__info-contact">

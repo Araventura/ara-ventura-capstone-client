@@ -3,6 +3,7 @@ import "./OfficesList.scss";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import dateFormat from "dateformat";
+import PostJob from "../PostJob/PostJob";
 import EditIcon from "../../assets/icon/edit.png";
 import DeleteIcon from "../../assets/icon/delete.png";
 
@@ -57,7 +58,7 @@ function OfficesList() {
       <div className="office__details">
         <h2 className="office__title">Welcome back {office.contactName}!</h2>
         <div className="office__buttons">
-          <Link className="office__link">
+          <Link to={`/offices/${params.id}/post`} className="office__link">
             <button className="office__buton">Post a job</button>
           </Link>
           <Link className="office__link">

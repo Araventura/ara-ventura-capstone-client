@@ -9,6 +9,7 @@ import ProfessionalDetails from "./components/ProfessionalDetails/ProfessionalDe
 import Offices from "./components/OfficesList/OfficesList";
 import OfficeDetails from "./components/OfficeDetails/OfficeDetails";
 import Footer from "./components/Footer/Footer";
+import PostJob from "./components/PostJob/PostJob";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/professionals" element={<Professionals />} />
           <Route path="/professionals/:id" element={<ProfessionalDetails />} />
           <Route path="/offices/:id" element={<Offices />} />
+          <Route path="/offices/:id/post" element={<PostJob />} />
           <Route path="/offices/:id" element={<OfficeDetails />} />
         </Routes>
         <Footer />

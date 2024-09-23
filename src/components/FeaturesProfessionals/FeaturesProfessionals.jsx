@@ -27,7 +27,15 @@ function FeaturesProfessionals() {
             ⚡️ Get reminders of your upcoming shifts
           </li>
         </ul>
-        <Link to={"/"} className="hero__button">
+        <Link
+          onClick={(e) =>
+            alert(
+              "This feature will be coming soon! We appreciate your patience."
+            )
+          }
+          to={"/"}
+          className="hero__button"
+        >
           <button>Sign up for free</button>
         </Link>
       </div>

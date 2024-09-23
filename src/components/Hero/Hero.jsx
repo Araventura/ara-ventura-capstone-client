@@ -15,7 +15,15 @@ function Hero() {
           hours in planning, scheduling, prioritizing communication between
           clinics and dental professionals.
         </h4>
-        <Link to={"/"} className="hero__button">
+        <Link
+          onClick={(e) =>
+            alert(
+              "This feature will be coming soon! We appreciate your patience."
+            )
+          }
+          to={"/"}
+          className="hero__button"
+        >
           <button>Sign up for free</button>
         </Link>
       </div>

@@ -26,7 +26,15 @@ function Home() {
         <h2 className="call-to-action__title">
           Get Started with DentaShift today!
         </h2>
-        <Link to={"/"} className="hero__button call-to-action__button">
+        <Link
+          onClick={(e) =>
+            alert(
+              "This feature will be coming soon! We appreciate your patience."
+            )
+          }
+          to={"/"}
+          className="hero__button call-to-action__button"
+        >
           <button>Sign up for free</button>
         </Link>
       </div>

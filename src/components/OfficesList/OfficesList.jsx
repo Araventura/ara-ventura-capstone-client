@@ -90,11 +90,6 @@ function OfficesList() {
                   <div className="office__top-right">
                     <div className="office__icon-wrapper">
                       <img
-                        className="office__icon"
-                        src={EditIcon}
-                        alt="Edit Icon"
-                      />
-                      <img
                         onClick={() => handleDeleteJob(job.id)}
                         className="office__icon"
                         src={DeleteIcon}

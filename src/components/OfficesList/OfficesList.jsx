@@ -60,7 +60,14 @@ function OfficesList() {
           <Link to={`/offices/${params.id}/post`} className="office__link">
             <button className="office__buton">Post a job</button>
           </Link>
-          <Link className="office__link">
+          <Link
+            onClick={(e) =>
+              alert(
+                "This feature will be coming soon! We appreciate your patience."
+              )
+            }
+            className="office__link"
+          >
             <button className="office__buton">
               Browse dental professionals
             </button>

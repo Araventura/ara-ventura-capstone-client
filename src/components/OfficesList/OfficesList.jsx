@@ -3,7 +3,6 @@ import "./OfficesList.scss";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import dateFormat from "dateformat";
-import PostJob from "../PostJob/PostJob";
 import EditIcon from "../../assets/icon/edit.png";
 import DeleteIcon from "../../assets/icon/delete.png";
 

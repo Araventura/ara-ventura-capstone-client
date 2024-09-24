@@ -77,7 +77,7 @@ function OfficesList() {
       <div className="office__jobs">
         <h4 className="office__jobs-title">Active job listings:</h4>
         <ul className="office__jobs-list">
-          {officeJobsList.map((job) => (
+          {officeJobsList.map((job, i) => (
             <div key={job.id} className="office__jobs-link">
               <li className="office__jobs-item">
                 <div className="office__jobs-top">
@@ -89,7 +89,7 @@ function OfficesList() {
                     />
                     <div className="office__top-details">
                       <h4 className="doctor-name">
-                        {job.id}. {office.practicingDoctor}
+                        {i + 1}. {office.practicingDoctor}
                       </h4>
                       <h4 className="office-address">{office.address}</h4>
                     </div>

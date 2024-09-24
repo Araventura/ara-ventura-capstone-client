@@ -58,7 +58,7 @@ function OfficesList() {
         <h2 className="office__title">Welcome back {office.contactName}!</h2>
         <div className="office__buttons">
           <Link to={`/offices/${params.id}/post`} className="office__link">
-            <button className="office__buton">Post a job</button>
+            <button className="office__button">Post a job</button>
           </Link>
           <Link
             onClick={(e) =>
@@ -68,7 +68,7 @@ function OfficesList() {
             }
             className="office__link"
           >
-            <button className="office__buton">
+            <button className="office__button">
               Browse dental professionals
             </button>
           </Link>

@@ -2,7 +2,8 @@
 @use "../../styles/mixins" as *;
 
 .office {
-  margin: 0 32px;
+  margin: 120px 32px 0;
+  position: static;
 
   &__details {
     display: flex;
@@ -83,5 +84,15 @@
     width: 25px;
     height: auto;
     margin: 10px 10px 0;
+  }
+
+  &__button {
+    transition: all 500ms;
+    border: none;
+
+    &:hover {
+      background-color: $background-color-lilac;
+      color: white;
+    }
   }
 }

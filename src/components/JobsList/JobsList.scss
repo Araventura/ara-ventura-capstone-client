@@ -3,7 +3,9 @@
 
 .jobs {
   display: flex;
-  margin: 32px;
+  justify-content: space-between;
+  margin: 120px 32px 0;
+  position: static;
 
   &__left {
     display: flex;
@@ -65,6 +67,7 @@
 
     &-image {
       width: inherit;
+      position: fixed;
     }
   }
 
@@ -83,6 +86,7 @@
         margin-bottom: 0px;
         font-size: 12px;
         color: black;
+        font-weight: 400;
       }
     }
 

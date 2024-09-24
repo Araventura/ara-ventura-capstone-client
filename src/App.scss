@@ -38,6 +38,7 @@ button {
   margin: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-weight: 400;
 
   & :hover {
     background-color: $primary-color-lilac;
@@ -84,4 +85,5 @@ button {
   margin-bottom: 0px;
   font-size: 14px;
   color: black;
+  font-weight: 400;
 }

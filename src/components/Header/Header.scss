@@ -9,6 +9,10 @@
   height: 100px;
   box-shadow: 0 3px 16px -3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   &__logo-wrapper {
     & img {
@@ -20,6 +24,7 @@
   &__button {
     &-home {
       font-weight: bold;
+      transition: all 500ms;
 
       & button {
         color: white;
@@ -28,9 +33,15 @@
     }
 
     &-professional {
+      transition: all 500ms;
+
       & button {
         margin-left: 0;
       }
+    }
+
+    &-office {
+      transition: all 500ms;
     }
   }
 }

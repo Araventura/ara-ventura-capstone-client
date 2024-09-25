@@ -23,25 +23,31 @@
 
   &__button {
     &-home {
-      font-weight: bold;
-      transition: all 500ms;
-
-      & button {
-        color: white;
-        background-color: $primary-color-lilac;
-      }
+      transition: all 0.1s;
+      margin-left: 16px;
+      padding: 0 8px;
+      border-radius: 5px;
     }
 
     &-professional {
-      transition: all 500ms;
-
-      & button {
-        margin-left: 0;
-      }
+      transition: all 0.1s;
+      margin-left: 16px;
+      padding: 0 8px;
+      border-radius: 5px;
     }
 
     &-office {
-      transition: all 500ms;
+      transition: all 0.1s;
+      margin-left: 16px;
+      padding: 0 8px;
+      border-radius: 5px;
     }
   }
+}
+
+.active-button {
+  color: white;
+  background-color: $primary-color-lilac;
+  font-weight: bold;
+  text-decoration: none;
 }

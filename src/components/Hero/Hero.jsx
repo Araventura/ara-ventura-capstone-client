@@ -8,7 +8,7 @@ function Hero() {
     <div className="hero">
       <div className="hero__left">
         <h2 className="hero__title">
-          Find the nearest dental professional for your offices needs
+          Find the nearest dental professional for your office needs
         </h2>
         <h4 className="hero__subtitle">
           DentaShift offers a stress free booking at lightning speed, saving

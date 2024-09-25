@@ -68,15 +68,20 @@ function PostJob() {
             action=""
             onSubmit={(e) => handleSubmit(e)}
           >
-            <label className="form__label" htmlFor="">
+            <label className="form__label" htmlFor="" for="jobs">
               What type of dental professional are you looking for?:
             </label>
-            <input
-              className="form__input"
-              name="jobTitle"
-              placeholder="Type here"
-              required
-            />
+            <select className="form__input" id="jobs" name="jobTitle">
+              <option value="Dental Hygienist">Dental Hygienist</option>
+              <option value="Front Desk Receptionist">
+                Front Desk Receptionist
+              </option>
+              <option value="Dental Assistant">Dental Assistant</option>
+              <option value="Sterilization Technician">
+                Sterilization Technician
+              </option>
+              <option value="Office Manager">Office Manager</option>
+            </select>
             <label className="form__label" htmlFor="">
               The description of this job
             </label>
@@ -93,6 +98,9 @@ function PostJob() {
               className="form__input"
               name="dateStart"
               placeholder="YYYY-MM-DD"
+              type="date"
+              min="2024-09-01"
+              max="2025-09-01"
               required
             />
             <label className="form__label" htmlFor="">
@@ -102,6 +110,9 @@ function PostJob() {
               className="form__input"
               name="dateEnd"
               placeholder="YYYY-MM-DD"
+              type="date"
+              min="2024-09-01"
+              max="2025-09-01"
               required
             />
             <label className="form__label" htmlFor="">
@@ -111,6 +122,7 @@ function PostJob() {
               className="form__input"
               name="payMin"
               placeholder="Minimum"
+              type="number"
               required
             />
             <label className="form__label" htmlFor="">
@@ -120,6 +132,7 @@ function PostJob() {
               className="form__input"
               name="payMax"
               placeholder="Maximum"
+              type="number"
               required
             />
             <button type="submit" className="form__button">

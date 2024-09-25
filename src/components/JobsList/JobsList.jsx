@@ -95,9 +95,9 @@ function JobsList() {
                       Date: {dateFormat(job.dateStart, "mmm d")} -{" "}
                       {dateFormat(job.dateEnd, "mmm d")}
                     </p>
-                    <p className="list-details jobs__details-contact">
+                    {/* <p className="list-details jobs__details-contact">
                       Contact: {job.officeContact} - {job.officeContactPosition}
-                    </p>
+                    </p> */}
                   </div>
                   <div className="jobs__details-right">
                     <img

@@ -81,6 +81,9 @@
     &-left {
       width: 50%;
       margin-left: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
 
       & p {
         margin-bottom: 0px;

@@ -85,9 +85,9 @@ function JobsList() {
                       {" "}
                       ⭐️ 5.0 Reviews
                     </p>
-                    <p className="list-details jobs__details-office">
+                    {/* <p className="list-details jobs__details-office">
                       Office: {job.officeName}
-                    </p>
+                    </p> */}
                     <p className="list-details jobs__details-job">
                       Looking for: <b>{job.jobTitle}</b>
                     </p>

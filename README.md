@@ -1,1 +1,3 @@
-# ara-ventura-capstone-client
+## Hi there! 👋🏻
+
+### Welcome to my capstone project.
